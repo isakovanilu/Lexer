@@ -10,7 +10,5 @@ public class Main {
         Parser parser = new Parser(tokens);
         ASTNode root = parser.parse();
         root.print(" ");
-
-
     }
 }

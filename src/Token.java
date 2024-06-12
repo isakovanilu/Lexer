@@ -18,8 +18,8 @@ public class Token {
     @Override
     public String toString() {
         return "Token{" +
-                    "type=" + type +
-                    ", value='" + value + '\'' +
+                "type=" + type +
+                ", value='" + value + '\'' +
                 '}';
     }
 }
