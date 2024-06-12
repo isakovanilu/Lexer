@@ -43,7 +43,7 @@ public class Parser {
     }
 
     private void consume(Token.Type type) {
-        if (currentToken.type == type){
+        if (currentToken != null && currentToken.type == type){
             currentPos ++;
             if (currentPos < tokens.size()) {
                 currentToken = tokens.get(currentPos);
@@ -52,15 +52,24 @@ public class Parser {
             }
 
         } else {
-            throw new ParserException("Unexpected Token: " + type );
+            throw new ParserException("Unexpected Token: " + currentToken + " expected: " + type );
         }
     }
 
     private ASTNode factor() {
         Token token = currentToken;
-        consume(Token.Type.NUMBER);
-        return new NumberNode(token);
+        if (token.type == Token.Type.NUMBER) {
+            consume(Token.Type.NUMBER);
+            return new NumberNode(token);
+        }
+        if (token.type == Token.Type.LPAREN) {
+            consume(Token.Type.LPAREN);
+            ASTNode node = expression();
+            consume(Token.Type.RPAREN);
+            return node;
 
+        }
+        throw new ParserException("Unexpected token found for the factor: " + token);
     }
 
 }
