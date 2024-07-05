@@ -1,0 +1,14 @@
+class Var extends ASTNode {
+    Token token;
+    String name;
+
+    Var(Token token) {
+        this.token = token;
+        this.name = token.value;
+    }
+
+    @Override
+    public void print(String indent) {
+        System.out.println(indent + "Var{" + name + '}');
+    }
+}
