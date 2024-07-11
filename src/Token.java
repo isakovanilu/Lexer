@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class Token {
     public enum Type {
-        NUMBER, ASSIGN, MULTIPLE, DIVIDE, PLUS, MINUS, LPAREN, RPAREN, VAR, IDENTIFIER, LBRACE, RBRACE, SEMICOLON
+        NUMBER, ASSIGN, MULTIPLY, DIVIDE, PLUS, MINUS, LPAREN, RPAREN, VAR, IDENTIFIER, LBRACE, RBRACE, SEMICOLON
     }
 
     public final Type type;
