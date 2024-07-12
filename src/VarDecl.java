@@ -1,6 +1,6 @@
 public class VarDecl extends ASTNode {
-    Var varNode;
-    ASTNode expr;
+    public Var varNode;
+    public ASTNode expr;
 
     public VarDecl(Var varNode, ASTNode expr) {
         this.varNode = varNode;
