@@ -83,7 +83,7 @@ public class Parser {
     private ASTNode term() {
         ASTNode node = factor();
 
-        while(currentToken != null && (currentToken.type == Token.Type.MULTIPLE || currentToken.type == Token.Type.DIVIDE)) {
+        while(currentToken != null && (currentToken.type == Token.Type.MULTIPLY || currentToken.type == Token.Type.DIVIDE)) {
             Token token = currentToken;
             consume(currentToken.type);
             node = new BinaryOpNode(node, factor(), token);
